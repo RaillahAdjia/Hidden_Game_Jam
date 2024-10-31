@@ -15,4 +15,10 @@ public class SettingsManager : MonoBehaviour
     {
         
     }
+
+    public void CloseSettings()
+    {
+        Debug.Log("CloseSettings called");
+        SceneManager.instance.UnloadSettingsScene();
+    }
 }
