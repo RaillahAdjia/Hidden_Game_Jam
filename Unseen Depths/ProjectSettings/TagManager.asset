@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Creature
   layers:
   - Default
   - TransparentFX
@@ -40,4 +41,19 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Water
+    uniqueID: 551315181
+    locked: 0
+  - name: Boundaries
+    uniqueID: 3793345859
+    locked: 0
+  - name: Player
+    uniqueID: 3479007613
+    locked: 0
+  - name: Decoration
+    uniqueID: 3126592653
+    locked: 0
+  - name: UI
+    uniqueID: 1663696965
     locked: 0
