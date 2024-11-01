@@ -6,7 +6,9 @@ public class Diver : MonoBehaviour
 {
     Rigidbody2D rb;
     [Header("Movement")]
-    [SerializeField] float speed = 3.0f;
+    [SerializeField] float speed = 5.0f;
+    [Header("Tools")]
+    [SerializeField] ProjectileLauncher projectileLauncher;
 
     void Awake(){
         rb = GetComponent<Rigidbody2D>();
@@ -15,5 +17,9 @@ public class Diver : MonoBehaviour
     //Controls
     public void Move(Vector3 movement){
         rb.velocity = movement * speed;
+    }
+
+    public void LauchProjectile(){
+        projectileLauncher.Launch();
     }
 }
