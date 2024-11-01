@@ -17,10 +17,12 @@ public class PlayerInputHandler : MonoBehaviour
         Vector3 movement = Vector3.zero;
         if(Input.GetKey(KeyCode.A)){
             movement += new Vector3(-1,0,0);
+            player.transform.localScale = new Vector3(-1, 1, 1);
         }
 
         if(Input.GetKey(KeyCode.D)){
             movement += new Vector3(1,0,0);
+            player.transform.localScale = new Vector3(1, 1, 1);
         }
 
         if(Input.GetKey(KeyCode.W)){

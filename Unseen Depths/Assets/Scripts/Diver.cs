@@ -20,6 +20,7 @@ public class Diver : MonoBehaviour
     }
 
     public void LauchProjectile(){
-        projectileLauncher.Launch();
+        float direction = transform.localScale.x > 0 ? 1 : -1;
+        projectileLauncher.Launch(direction);
     }
 }

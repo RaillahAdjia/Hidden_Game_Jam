@@ -9,9 +9,9 @@ public class ProjectileLauncher : MonoBehaviour
     [SerializeField] Transform spawnTransform;
     [SerializeField] AudioSource audioSource;
     
-    public void Launch(){
+    public void Launch(float direction){
         GameObject newProjectile = Instantiate(projectilePrefab, spawnTransform.position, Quaternion.identity);
-        newProjectile.GetComponent<Rigidbody2D>().velocity = new Vector3(projectileSpeed, 0, 0);
+        newProjectile.GetComponent<Rigidbody2D>().velocity = new Vector3(projectileSpeed * direction, 0, 0);
         audioSource.Play();
         Destroy(newProjectile, 4);
     }
