@@ -19,6 +19,12 @@ public class Diver : MonoBehaviour
         rb.velocity = movement * speed;
     }
 
+    public void MoveTowards(Vector3 goalPos){
+        goalPos.z = 0;
+        Vector3 direction = goalPos - transform.position;
+        Move(direction.normalized);
+    }
+
     public void LauchProjectile(){
         float direction = transform.localScale.x > 0 ? 1 : -1;
         projectileLauncher.Launch(direction);

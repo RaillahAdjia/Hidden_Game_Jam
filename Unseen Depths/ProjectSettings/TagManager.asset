@@ -48,8 +48,14 @@ TagManager:
   - name: Boundaries
     uniqueID: 3793345859
     locked: 0
+  - name: Projectiles
+    uniqueID: 850686101
+    locked: 0
   - name: Player
     uniqueID: 3479007613
+    locked: 0
+  - name: Creatures
+    uniqueID: 90751703
     locked: 0
   - name: Decoration
     uniqueID: 3126592653

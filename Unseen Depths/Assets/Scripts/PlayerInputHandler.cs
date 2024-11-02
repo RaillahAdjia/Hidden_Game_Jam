@@ -12,6 +12,7 @@ public class PlayerInputHandler : MonoBehaviour
             player.LauchProjectile();
         }
     }
+    
     void FixedUpdate()
     {
         Vector3 movement = Vector3.zero;
