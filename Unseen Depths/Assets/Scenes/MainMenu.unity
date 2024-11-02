@@ -615,7 +615,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 608333052}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2118234931}
+        m_TargetAssemblyTypeName: PanelManager, Assembly-CSharp
+        m_MethodName: ShowPanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &608333052
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -893,7 +905,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 824455629}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2118234931}
+        m_TargetAssemblyTypeName: PanelManager, Assembly-CSharp
+        m_MethodName: HidePanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &824455629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2361,6 +2385,7 @@ GameObject:
   - component: {fileID: 2118234927}
   - component: {fileID: 2118234929}
   - component: {fileID: 2118234928}
+  - component: {fileID: 2118234931}
   - component: {fileID: 2118234930}
   m_Layer: 5
   m_Name: Panel
@@ -2443,6 +2468,19 @@ MonoBehaviour:
   m_EffectColor: {r: 0.62352943, g: 0.68235296, b: 1, a: 0.019607844}
   m_EffectDistance: {x: 5, y: -5}
   m_UseGraphicAlpha: 1
+--- !u!114 &2118234931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2118234926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af698580dc8ebd946820f9f02bf96458, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panel: {fileID: 2118234926}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
