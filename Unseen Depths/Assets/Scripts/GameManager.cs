@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SceneManager : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
-    public static SceneManager instance;
+    public static GameManager instance { get; private set; }
+
+    public enum GameMode { Story, Survival }
+    public GameMode currentGameMode { get; private set; }
 
     private void Awake(){
         if(instance == null){
@@ -14,6 +17,11 @@ public class SceneManager : MonoBehaviour
         else{
             Destroy(gameObject);
         }
+    }
+
+    public void SetGameMode(GameMode mode)
+    {
+        currentGameMode = mode;
     }
 
     public void LoadScene(string sceneName){
@@ -29,8 +37,7 @@ public class SceneManager : MonoBehaviour
     }
 
     // Quits the application
-    public void QuitGame()
-    {
+    public void QuitGame(){
         Application.Quit();
     }
 }

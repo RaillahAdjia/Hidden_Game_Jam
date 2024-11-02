@@ -116,9 +116,9 @@ public class SettingsMenu : MonoBehaviour
     {
         Debug.Log("CloseSettings called");
 
-        if (SceneManager.instance != null)
+        if (GameManager.instance != null)
         {
-            SceneManager.instance.UnloadSettingsScene();
+            GameManager.instance.UnloadSettingsScene();
         }
         else
         {

@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Creature
+  - Projectile
   layers:
   - Default
   - TransparentFX
@@ -41,6 +42,12 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Kraken
+    uniqueID: 717382801
+    locked: 0
+  - name: Ship
+    uniqueID: 3281194309
     locked: 0
   - name: Water
     uniqueID: 551315181

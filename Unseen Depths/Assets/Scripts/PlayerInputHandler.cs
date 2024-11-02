@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerInputHandler : MonoBehaviour
 {
-    [SerializeField] Diver player;
+    [SerializeField] public Diver player;
     
     // Update is called once per frame
     void Update(){
@@ -33,7 +33,6 @@ public class PlayerInputHandler : MonoBehaviour
         if(Input.GetKey(KeyCode.S)){
             movement += new Vector3(0,-1,0);
         }
-
         player.Move(movement);
     }
 }
