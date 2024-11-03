@@ -744,9 +744,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SettingsMenu, Assembly-CSharp
-        m_MethodName: CloseSettings
+      - m_Target: {fileID: 799791646}
+        m_TargetAssemblyTypeName: SettingsManager, Assembly-CSharp
+        m_MethodName: UnloadSettingsScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2072,12 +2072,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df5514f98a2f2614eae2148f5ea4ee2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioMixer: {fileID: 0}
-  resolutionDropDown: {fileID: 0}
-  masterVolumeSlider: {fileID: 0}
-  musicVolumeSlider: {fileID: 0}
-  sfxVolumeSlider: {fileID: 0}
-  gunshotClip: {fileID: 0}
+  audioMixer: {fileID: 24100000, guid: 0de5cfcdb3201834bb04a45f1a5fb180, type: 2}
+  volumeSlider: {fileID: 1712286761}
 --- !u!1 &852379347
 GameObject:
   m_ObjectHideFlags: 0
@@ -3534,19 +3530,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1853661029}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SettingsMenu, Assembly-CSharp
-        m_MethodName: ApplySettings
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1853661029
 MonoBehaviour:
   m_ObjectHideFlags: 0

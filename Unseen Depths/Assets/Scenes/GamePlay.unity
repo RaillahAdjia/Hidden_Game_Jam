@@ -500,7 +500,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1168374643
-  m_SortingLayer: 6
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -1178,7 +1178,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 335.1, y: -50}
+  m_AnchoredPosition: {x: 335.10004, y: -50}
   m_SizeDelta: {x: 500, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &896204258
@@ -1351,7 +1351,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -501621437
-  m_SortingLayer: 2
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -2760,7 +2760,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 551315181
-  m_SortingLayer: 1
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -5209,7 +5209,7 @@ MonoBehaviour:
   - {fileID: 3291975634534132488, guid: 8511f6429ec9990479f8c3b67906dd5e, type: 3}
   - {fileID: 1650450557676024894, guid: a42546e2fb418a04abd3f9fce5d75d9b, type: 3}
   - {fileID: 2395871030328552847, guid: db2703b9c1a3a3d48afe3861127c3a9c, type: 3}
-  killRequirements: 01000000020000000300000004000000
+  killRequirements: 0a0000000f0000001400000019000000
   targetDiver: {fileID: 463760469}
   diverPrefab: {fileID: 3640346212568298774, guid: 40b0668ed263c24428678070114ab9ff, type: 3}
   nextLevelPanel: {fileID: 1481765532}

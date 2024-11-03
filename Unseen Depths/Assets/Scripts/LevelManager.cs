@@ -225,7 +225,7 @@ public class LevelManager : MonoBehaviour
             killCountText.text = "Total Kills: " + currentKillCount; // Display death tally in Survival Mode
         }
         else{
-            killCountText.text = "Kills: " + currentKillCount + "/" + killRequirements[currentLevel - 1];
+            killCountText.text = "Kill Goal: " + currentKillCount + "/" + killRequirements[currentLevel - 1];
         }
     }
 
