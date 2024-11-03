@@ -55,12 +55,16 @@ public class LevelManager : MonoBehaviour
     }
 
     IEnumerator SpawnCreatures(){
-        while (!levelComplete){
+        if(GameManager.instance.currentGameMode == GameManager.GameMode.Story){
+            while (!levelComplete){
             GameObject creatureToSpawn = GetCreatureForCurrentLevel();
             if (creatureToSpawn != null){
                 SpawnCreature(creatureToSpawn);
             }
             yield return new WaitForSeconds(spawnInterval);
+        }
+        } else if(GameManager.instance.currentGameMode == GameManager.GameMode.Survival){
+            yield return StartCoroutine(SpawnAllCreatures());
         }
     }
 
@@ -140,6 +144,8 @@ public class LevelManager : MonoBehaviour
 
         ShowNextLevelPanel(); // Show the panel
         SetNextLevelButtonText(); // Update the button text to "Play Again"
+
+        UpdateLevelUI();
     }
 
     private void SpawnNewDiver(){
@@ -177,6 +183,7 @@ public class LevelManager : MonoBehaviour
             levelComplete = false;
             nextLevelPanel.SetActive(false);
             SpawnNewDiver();
+            UpdateLevelUI();
             StartCoroutine(SpawnCreatures());
             timer = 0.0f; // Reset timer if necessary
         }
@@ -212,11 +219,14 @@ public class LevelManager : MonoBehaviour
     }
 
     void UpdateLevelUI(){
-        if (GameManager.instance.currentGameMode == GameManager.GameMode.Survival){
-            levelText.text = "SURVIAL MODE"; //in Survival Mode
+        if(playerDied){
+            levelText.text = "YOU DIED";
         }
-        else{
+        else if (GameManager.instance.currentGameMode == GameManager.GameMode.Story){
             levelText.text = "Level " + currentLevel + " Complete";
+        }
+        else if(GameManager.instance.currentGameMode == GameManager.GameMode.Survival){
+            levelText.text = "SURVIAL MODE"; //in Survival Mode
         }
     }
 
@@ -235,7 +245,7 @@ public class LevelManager : MonoBehaviour
         }
         else if (GameManager.instance.currentGameMode == GameManager.GameMode.Survival){
             descriptionText.text = "Dang they got your ass!";
-            spawnInterval = 1.0f;
+            spawnInterval = 1.5f;
         }
     }
 

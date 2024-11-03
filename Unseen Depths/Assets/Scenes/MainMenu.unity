@@ -1549,8 +1549,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1210513077}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+      - m_Target: {fileID: 1720137706}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: LoadSettingsScene
         m_Mode: 1
         m_Arguments:
@@ -3417,8 +3417,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1210513077}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+      - m_Target: {fileID: 1720137706}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
@@ -3716,5 +3716,5 @@ SceneRoots:
   - {fileID: 1971407539}
   - {fileID: 1815827940}
   - {fileID: 1691083008}
-  - {fileID: 1210513076}
   - {fileID: 1720137707}
+  - {fileID: 1210513076}

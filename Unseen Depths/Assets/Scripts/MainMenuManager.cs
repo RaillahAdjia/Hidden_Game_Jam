@@ -55,4 +55,12 @@ public class MainMenu : MonoBehaviour
             playPanel.SetActive(false);
         }
     }
+
+    public void LoadSettingsScene(){
+        GameManager.instance.LoadSettingsScene();
+    }
+
+    public void QuitGame(){
+        GameManager.instance.QuitGame();
+    }
 }

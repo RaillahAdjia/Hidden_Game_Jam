@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8471be9dafba5a74aa424894bfc4f8f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.8
+  speed: 1.2
   targetDiver: {fileID: 0}
   faceFront: {fileID: 668258553660190325}
   creatureSprite: {fileID: 7365541557346562912}
