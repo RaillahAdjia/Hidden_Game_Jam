@@ -745,7 +745,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 799791646}
-        m_TargetAssemblyTypeName: SettingsManager, Assembly-CSharp
+        m_TargetAssemblyTypeName: SettingsMenu, Assembly-CSharp
         m_MethodName: UnloadSettingsScene
         m_Mode: 1
         m_Arguments:
@@ -1817,7 +1817,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: APPLY
+  m_text: DEFAULT
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2073,7 +2073,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: 0de5cfcdb3201834bb04a45f1a5fb180, type: 2}
-  volumeSlider: {fileID: 1712286761}
+  masterVolumeSlider: {fileID: 1054182179}
+  musicVolumeSlider: {fileID: 1712286761}
+  sfxVolumeSlider: {fileID: 1754632796}
+  resolutionDropdown: {fileID: 518183092}
 --- !u!1 &852379347
 GameObject:
   m_ObjectHideFlags: 0
@@ -3461,7 +3464,7 @@ GameObject:
   - component: {fileID: 1853661029}
   - component: {fileID: 1853661028}
   m_Layer: 5
-  m_Name: Button Apply
+  m_Name: Button default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3530,7 +3533,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1853661029}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 799791646}
+        m_TargetAssemblyTypeName: SettingsMenu, Assembly-CSharp
+        m_MethodName: Defaults
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1853661029
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -2,32 +2,115 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
+using TMPro;
 
 public class SettingsManager : MonoBehaviour
 {
-    public AudioMixer audioMixer; // Reference to your Audio Mixer
-    public Slider volumeSlider;   // Reference to your UI Slider
+    [SerializeField] private AudioMixer audioMixer;
+    [SerializeField] private Slider masterVolumeSlider;
+    [SerializeField] private Slider musicVolumeSlider;
+    [SerializeField] private Slider sfxVolumeSlider;
+    [SerializeField] private TMP_Dropdown resolutionDropdown;
+
+    private Resolution[] availableResolutions;
 
     private void Start()
     {
-        // Initialize the slider to the current volume setting
-        float currentVolume;
-        audioMixer.GetFloat("musicVolume", out currentVolume);
-        volumeSlider.value = Mathf.Pow(10, currentVolume / 20); // Convert to linear scale
+        // Load saved volume settings or set default values
+        masterVolumeSlider.value = PlayerPrefs.GetFloat("masterVolume");
+        musicVolumeSlider.value = PlayerPrefs.GetFloat("musicVolume");
+        sfxVolumeSlider.value = PlayerPrefs.GetFloat("sfxVolume");
 
-        // Add listener to detect slider changes
-        volumeSlider.onValueChanged.AddListener(SetVolume);
+        // Apply initial volume levels
+        SetMasterVolume(masterVolumeSlider.value);
+        SetMusicVolume(musicVolumeSlider.value);
+        SetSFXVolume(sfxVolumeSlider.value);
+
+        // Add listeners to sliders
+        masterVolumeSlider.onValueChanged.AddListener(SetMasterVolume);
+        musicVolumeSlider.onValueChanged.AddListener(SetMusicVolume);
+        sfxVolumeSlider.onValueChanged.AddListener(SetSFXVolume);
+
+        // Initialize resolution dropdown
+        InitializeResolutionDropdown();
     }
 
-    // This function will be called whenever the slider value changes
-    public void SetVolume(float volume)
+    private void InitializeResolutionDropdown()
     {
-        // Convert slider value (0 to 1) to a decibel scale (-80 dB to 0 dB)
-        float dB = Mathf.Log10(volume) * 20;
-        audioMixer.SetFloat("musicVolume", dB);
+        availableResolutions = Screen.resolutions;
+        resolutionDropdown.ClearOptions();
+
+        List<string> resolutionOptions = new List<string>();
+        int currentResolutionIndex = 0;
+
+        for (int i = 0; i < availableResolutions.Length; i++)
+        {
+            string option = availableResolutions[i].width + " x " + availableResolutions[i].height;
+            resolutionOptions.Add(option);
+
+            if (availableResolutions[i].width == Screen.currentResolution.width &&
+                availableResolutions[i].height == Screen.currentResolution.height)
+            {
+                currentResolutionIndex = i;
+            }
+        }
+
+        resolutionDropdown.AddOptions(resolutionOptions);
+        resolutionDropdown.value = PlayerPrefs.GetInt("ResolutionIndex", currentResolutionIndex);
+        resolutionDropdown.RefreshShownValue();
+
+        resolutionDropdown.onValueChanged.AddListener(SetResolution);
     }
 
-    public void UnloadSettingsScene(){
+    public void SetResolution(int resolutionIndex)
+    {
+        Resolution selectedResolution = availableResolutions[resolutionIndex];
+        Screen.SetResolution(selectedResolution.width, selectedResolution.height, Screen.fullScreen);
+        PlayerPrefs.SetInt("ResolutionIndex", resolutionIndex);
+        PlayerPrefs.Save();
+    }
+
+    public void SetMasterVolume(float value)
+    {
+        audioMixer.SetFloat("masterVolume", Mathf.Log10(Mathf.Clamp(value, 0.0001f, 1f)) * 20);
+        PlayerPrefs.SetFloat("masterVolume", value);
+        PlayerPrefs.Save();
+    }
+
+    public void SetMusicVolume(float value)
+    {
+        audioMixer.SetFloat("musicVolume", Mathf.Log10(Mathf.Clamp(value, 0.0001f, 1f)) * 20);
+        PlayerPrefs.SetFloat("musicVolume", value);
+        PlayerPrefs.Save();
+    }
+
+    public void SetSFXVolume(float value)
+    {
+        audioMixer.SetFloat("sfxVolume", Mathf.Log10(Mathf.Clamp(value, 0.0001f, 1f)) * 20);
+        PlayerPrefs.SetFloat("sfxVolume", value);
+        PlayerPrefs.Save();
+    }
+
+    public void Defaults()
+    {
+        masterVolumeSlider.value = 0.2f;
+        musicVolumeSlider.value = 0.2f;
+        sfxVolumeSlider.value = 0.2f;
+
+        for (int i = 0; i < availableResolutions.Length; i++)
+        {
+            if (availableResolutions[i].width == 1920 && availableResolutions[i].height == 1200)
+            {
+                resolutionDropdown.value = i;
+                resolutionDropdown.RefreshShownValue();
+                break;
+            }
+        }
+    }
+
+    public void UnloadSettingsScene()
+    {
         GameManager.instance.UnloadSettingsScene();
     }
+
 }
